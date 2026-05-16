@@ -1,0 +1,218 @@
+.driver-layout {
+  display: flex;
+  min-height: 100dvh;
+  background: var(--bg);
+}
+
+.driver-sidebar {
+  width: var(--sidebar-width);
+  background: #022c22;
+  color: var(--gray-300);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.driver-sidebar__header {
+  padding: var(--space-md);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+}
+
+.driver-sidebar__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.driver-sidebar__logo-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--driver), var(--driver-light));
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.driver-sidebar__brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: white;
+  font-size: 1.1rem;
+  display: block;
+}
+
+.driver-sidebar__role {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.driver-sidebar__nav {
+  flex: 1;
+  padding: var(--space-md) var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.driver-sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.5);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.driver-sidebar__link:hover {
+  color: white;
+  background: rgba(255,255,255,0.08);
+}
+
+.driver-sidebar__link--active {
+  color: white;
+  background: linear-gradient(135deg, var(--driver), var(--driver-light));
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+}
+
+.driver-sidebar__footer {
+  padding: var(--space-md);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.driver-sidebar__user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.driver-sidebar__avatar {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--driver), var(--driver-light));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.driver-sidebar__user-name {
+  font-size: 0.85rem;
+  color: white;
+  font-weight: 500;
+}
+
+.driver-sidebar__user-role {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.driver-sidebar__logout {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  width: 100%;
+  transition: all var(--transition-fast);
+}
+
+.driver-sidebar__logout:hover {
+  color: var(--danger);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.driver-main {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.driver-topbar {
+  height: 64px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-lg);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.driver-topbar__menu {
+  display: none;
+  color: var(--text-heading);
+  padding: var(--space-sm);
+}
+
+.driver-topbar__greeting {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.driver-topbar__greeting strong {
+  color: var(--text-heading);
+}
+
+.driver-content {
+  flex: 1;
+  padding: var(--space-xl);
+}
+
+.driver-overlay {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .driver-sidebar {
+    transform: translateX(-100%);
+    transition: transform var(--transition-base);
+  }
+
+  .driver-sidebar--open {
+    transform: translateX(0);
+  }
+
+  .driver-main {
+    margin-left: 0;
+  }
+
+  .driver-topbar__menu {
+    display: flex;
+  }
+
+  .driver-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+  }
+
+  .driver-content {
+    padding: var(--space-md);
+  }
+}

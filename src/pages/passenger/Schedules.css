@@ -1,0 +1,260 @@
+.schedules-page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+.schedules-page__header {
+  margin-bottom: var(--space-xl);
+}
+
+.schedules-page__header h1 {
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+
+.schedules-page__header p {
+  color: var(--text-muted);
+}
+
+/* Filters */
+.schedules-filters {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 160px;
+}
+
+.filter-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.filter-group select,
+.filter-group input {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  font-size: 0.9rem;
+  transition: border-color var(--transition-fast);
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--primary-100);
+}
+
+/* Results */
+.schedules-count {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.schedules-empty {
+  text-align: center;
+  padding: var(--space-4xl) var(--space-lg);
+  color: var(--text-muted);
+}
+
+.schedules-empty svg {
+  margin: 0 auto var(--space-md);
+  opacity: 0.3;
+}
+
+.schedules-empty h3 {
+  color: var(--text-heading);
+  margin-bottom: var(--space-sm);
+}
+
+/* Schedule Cards */
+.schedules-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.schedule-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.schedule-card:hover {
+  border-color: var(--primary-200);
+  box-shadow: var(--shadow-md);
+}
+
+.schedule-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--border-light);
+  background: var(--gray-50);
+}
+
+.schedule-card__route {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.schedule-card__arrow {
+  color: var(--primary);
+}
+
+.schedule-card__type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--info-bg);
+  color: var(--info);
+}
+
+.schedule-card__body {
+  padding: var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.schedule-card__times {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.schedule-card__time {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--text-muted);
+}
+
+.time-label {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.time-value {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  font-family: var(--font-display);
+}
+
+.schedule-card__duration {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  padding: 4px 12px;
+  background: var(--gray-100);
+  border-radius: var(--radius-full);
+}
+
+.schedule-card__info {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.schedule-card__detail {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.schedule-card__seats {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--success);
+}
+
+.schedule-card__seats.low {
+  color: var(--danger);
+}
+
+.schedule-card__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  border-top: 1px solid var(--border-light);
+  background: var(--gray-50);
+}
+
+.fare-label {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.fare-value {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+@media (max-width: 768px) {
+  .schedules-page {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .schedules-filters {
+    flex-direction: column;
+  }
+
+  .schedule-card__body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .schedule-card__info {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .schedule-card__times {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

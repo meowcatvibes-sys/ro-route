@@ -1,0 +1,130 @@
+/* ── Admin CRUD Shared Styles ──────────────────────────── */
+.admin-crud__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-xl);
+}
+
+.admin-crud__header h1 { font-size: 1.8rem; margin-bottom: 4px; }
+.admin-crud__header p { color: var(--text-muted); font-size: 0.9rem; }
+
+.actions-cell {
+  display: flex;
+  gap: 4px;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--space-lg);
+}
+
+.modal {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-xl);
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-lg) var(--space-xl);
+  border-bottom: 1px solid var(--border);
+}
+
+.modal__header h2 { font-size: 1.2rem; margin: 0; }
+
+.modal__header button {
+  color: var(--text-muted);
+  padding: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.modal__header button:hover { color: var(--text-heading); background: var(--gray-100); }
+
+.modal__body {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.modal__body .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal__body label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.modal__body input,
+.modal__body select,
+.modal__body textarea {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  font-size: 0.9rem;
+  transition: border-color var(--transition-fast);
+}
+
+.modal__body input:focus,
+.modal__body select:focus,
+.modal__body textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--primary-100);
+}
+
+.modal__body .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.modal__footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-xl);
+  border-top: 1px solid var(--border);
+}
+
+/* Status badges reuse */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-badge--confirmed, .status-badge--active, .status-badge--completed, .status-badge--arrived { background: var(--success-bg); color: var(--success); }
+.status-badge--pending, .status-badge--boarding, .status-badge--scheduled, .status-badge--maintenance { background: var(--warning-bg); color: var(--warning); }
+.status-badge--cancelled, .status-badge--no_show, .status-badge--retired, .status-badge--inactive { background: var(--danger-bg); color: var(--danger); }
+.status-badge--departed, .status-badge--in_transit { background: var(--info-bg); color: var(--info); }
+.status-badge--paid { background: var(--success-bg); color: var(--success); }
+
+@media (max-width: 768px) {
+  .admin-crud__header { flex-direction: column; gap: var(--space-md); }
+  .modal__body .form-row { grid-template-columns: 1fr; }
+}

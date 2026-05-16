@@ -1,0 +1,175 @@
+/* ============================================================
+   Shared Component Styles
+   Used across Admin, Driver, and Passenger pages
+   ============================================================ */
+
+/* ── Data Tables ──────────────────────────────────────────── */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th {
+  text-align: left;
+  padding: 12px var(--space-md);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  background: var(--gray-50);
+  border-bottom: 1px solid var(--border);
+}
+
+.data-table td {
+  padding: 12px var(--space-md);
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text);
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tr:hover td {
+  background: var(--primary-50);
+}
+
+.data-table code {
+  font-size: 0.75rem;
+  background: var(--gray-100);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--text-heading);
+}
+
+/* ── Dashboard Cards ──────────────────────────────────────── */
+.dashboard-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.dashboard-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-lg);
+  border-bottom: 1px solid var(--border);
+}
+
+.dashboard-card__header h3 {
+  font-size: 1rem;
+}
+
+/* ── Status Badges ────────────────────────────────────────── */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.status-badge--confirmed,
+.status-badge--active,
+.status-badge--completed,
+.status-badge--arrived,
+.status-badge--paid {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.status-badge--pending,
+.status-badge--boarding,
+.status-badge--scheduled,
+.status-badge--maintenance {
+  background: var(--warning-bg);
+  color: var(--warning);
+}
+
+.status-badge--cancelled,
+.status-badge--no_show,
+.status-badge--retired,
+.status-badge--inactive,
+.status-badge--refunded {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.status-badge--departed,
+.status-badge--in_transit {
+  background: var(--info-bg);
+  color: var(--info);
+}
+
+/* ── Trip List Items ──────────────────────────────────────── */
+.trips-list {
+  padding: var(--space-sm);
+}
+
+.trip-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast);
+}
+
+.trip-item:hover {
+  background: var(--gray-50);
+}
+
+.trip-item__time {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  min-width: 80px;
+}
+
+.trip-item__info {
+  flex: 1;
+}
+
+.trip-item__route {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.trip-item__details {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.trip-item__seats {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* ── Page Loader ──────────────────────────────────────────── */
+.page-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  gap: var(--space-lg);
+}
+
+.page-loader p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
