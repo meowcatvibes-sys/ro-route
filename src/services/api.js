@@ -34,96 +34,96 @@ api.interceptors.response.use(
 // ── Auth ──────────────────────────────────────────────
 export const authAPI = {
   login: (email, password) =>
-    api.post('/auth/login.php', { email, password }),
+    api.post('/auth/login', { email, password }),
 
   register: (data) =>
-    api.post('/auth/register.php', data),
+    api.post('/auth/register', data),
 
   me: () =>
-    api.get('/auth/me.php'),
+    api.get('/auth/me'),
 
   logout: () =>
-    api.post('/auth/logout.php'),
+    api.post('/auth/logout'),
 };
 
 // ── Schedules ─────────────────────────────────────────
 export const schedulesAPI = {
   list: (params) =>
-    api.get('/schedules/index.php', { params }),
+    api.get('/schedules/index', { params }),
 
   show: (id) =>
-    api.get('/schedules/show.php', { params: { id } }),
+    api.get('/schedules/show', { params: { id } }),
 };
 
 // ── Bookings ──────────────────────────────────────────
 export const bookingsAPI = {
   list: (params) =>
-    api.get('/bookings/index.php', { params }),
+    api.get('/bookings/index', { params }),
 
   show: (id) =>
-    api.get('/bookings/show.php', { params: { id } }),
+    api.get('/bookings/show', { params: { id } }),
 
   create: (data) =>
-    api.post('/bookings/store.php', data),
+    api.post('/bookings/store', data),
 
   cancel: (id) =>
-    api.post('/bookings/cancel.php', { id }),
+    api.post('/bookings/cancel', { id }),
 };
 
 // ── Admin ─────────────────────────────────────────────
 export const adminAPI = {
   dashboard: () =>
-    api.get('/admin/dashboard.php'),
+    api.get('/admin/dashboard'),
 
   // Buses
   getBuses: () =>
-    api.get('/admin/buses.php'),
+    api.get('/admin/buses'),
   saveBus: (data) =>
-    api.post('/admin/buses.php', data),
+    api.post('/admin/buses', data),
 
   // Drivers
   getDrivers: () =>
-    api.get('/admin/drivers.php'),
+    api.get('/admin/drivers'),
   saveDriver: (data) =>
-    api.post('/admin/drivers.php', data),
+    api.post('/admin/drivers', data),
 
   // Schedules
   getSchedules: () =>
-    api.get('/admin/schedules.php'),
+    api.get('/admin/schedules'),
   saveSchedule: (data) =>
-    api.post('/admin/schedules.php', data),
+    api.post('/admin/schedules', data),
 
   // Users
   getUsers: (params) =>
-    api.get('/admin/users.php', { params }),
+    api.get('/admin/users', { params }),
 
   // Announcements
   getAnnouncements: () =>
-    api.get('/announcements/index.php'),
+    api.get('/announcements/index'),
   saveAnnouncement: (data) =>
-    api.post('/announcements/index.php', data),
+    api.post('/announcements/index', data),
 
   // Reports
   getReports: (range) =>
-    api.get('/admin/reports.php', { params: { range } }),
+    api.get('/admin/reports', { params: { range } }),
 };
 
 // ── Driver ────────────────────────────────────────────
 export const driverAPI = {
   getTrips: (type) =>
-    api.get('/driver/trips.php', { params: { type } }),
+    api.get('/driver/trips', { params: { type } }),
 
   updateStatus: (scheduleId, status) =>
-    api.post('/driver/trips.php', { schedule_id: scheduleId, status }),
+    api.post('/driver/trips', { schedule_id: scheduleId, status }),
 
   getManifest: (scheduleId) =>
-    api.get('/driver/manifest.php', { params: { schedule_id: scheduleId } }),
+    api.get('/driver/manifest', { params: { schedule_id: scheduleId } }),
 };
 
 // ── Public ────────────────────────────────────────────
 export const publicAPI = {
   announcements: () =>
-    api.get('/announcements/index.php'),
+    api.get('/announcements/index'),
 };
 
 export default api;
