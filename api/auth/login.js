@@ -29,7 +29,7 @@ export default async function handler(req, res) {
 
     const [attemptResult] = await sql`
       SELECT COUNT(*) AS attempts FROM login_attempts
-      WHERE email = ${email} AND success = 0 AND attempted_at > NOW() - INTERVAL '${lockoutMinutes} minutes'
+      WHERE email = ${email} AND success = 0 AND attempted_at > NOW() - INTERVAL '15 minutes'
     `;
 
     if (attemptResult && parseInt(attemptResult.attempts) >= maxAttempts) {
@@ -50,7 +50,7 @@ export default async function handler(req, res) {
       
       const [failResult] = await sql`
         SELECT COUNT(*) AS attempts FROM login_attempts
-        WHERE email = ${email} AND success = 0 AND attempted_at > NOW() - INTERVAL '${lockoutMinutes} minutes'
+        WHERE email = ${email} AND success = 0 AND attempted_at > NOW() - INTERVAL '15 minutes'
       `;
       const remaining = maxAttempts - parseInt(failResult?.attempts || 0);
       

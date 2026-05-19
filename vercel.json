@@ -1,24 +1,9 @@
 {
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "rewrites": [
-    { "source": "/api/auth/login", "destination": "/api/auth/login" },
-    { "source": "/api/auth/register", "destination": "/api/auth/register" },
-    { "source": "/api/auth/me", "destination": "/api/auth/me" },
-    { "source": "/api/auth/logout", "destination": "/api/auth/logout" },
-    { "source": "/api/schedules/index", "destination": "/api/schedules/index" },
-    { "source": "/api/schedules/show", "destination": "/api/schedules/show" },
-    { "source": "/api/bookings/index", "destination": "/api/bookings/index" },
-    { "source": "/api/bookings/show", "destination": "/api/bookings/show" },
-    { "source": "/api/bookings/store", "destination": "/api/bookings/store" },
-    { "source": "/api/bookings/cancel", "destination": "/api/bookings/cancel" },
-    { "source": "/api/admin/dashboard", "destination": "/api/admin/dashboard" },
-    { "source": "/api/admin/buses", "destination": "/api/admin/buses" },
-    { "source": "/api/admin/drivers", "destination": "/api/admin/drivers" },
-    { "source": "/api/admin/schedules", "destination": "/api/admin/schedules" },
-    { "source": "/api/admin/users", "destination": "/api/admin/users" },
-    { "source": "/api/admin/reports", "destination": "/api/admin/reports" },
-    { "source": "/api/announcements/index", "destination": "/api/announcements/index" },
-    { "source": "/api/driver/trips", "destination": "/api/driver/trips" },
-    { "source": "/api/driver/manifest", "destination": "/api/driver/manifest" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
 }

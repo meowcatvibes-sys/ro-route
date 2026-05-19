@@ -16,7 +16,7 @@ export default async function handler(req, res) {
       SELECT DATE(bk.created_at) AS date, COUNT(*) AS bookings,
              SUM(CASE WHEN bk.payment_status = 'paid' THEN bk.amount_paid ELSE 0 END) AS revenue
       FROM bookings bk
-      WHERE bk.created_at >= CURRENT_DATE - CAST(${range} || ' days' AS INTERVAL)
+      WHERE bk.created_at >= CURRENT_DATE - make_interval(days => ${range})
       GROUP BY DATE(bk.created_at) ORDER BY date ASC
     `;
 
